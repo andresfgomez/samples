@@ -23,7 +23,6 @@ public class CountriesService {
     private CountriesIntegration integration;
 
     public List<Country> findAllCountries() {
-
         return integration.findAllCountries().stream().parallel().map(c -> {
             LOG.debug("Country: {} ", c.toString());
             return CountryBuilder.builder().withName(c.getName()).build();

@@ -28,6 +28,7 @@ public class CountriesIntegration {
         Response response = clientCountries.target("http://restcountries.eu").path("rest/v1/all").request(MediaType.APPLICATION_JSON).get();
 
         List<Map<String, Object>> message = response.readEntity(List.class);
+
         if (message == null) {
             return null;
         }
